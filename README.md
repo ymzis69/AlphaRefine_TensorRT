@@ -25,9 +25,9 @@ cd AlphaRefine
 
 Differnet from the base link, you need to install [TensorRT](https://developer.nvidia.com/nvidia-tensorrt-7x-download) and [torch2trt](https://github.com/NVIDIA-AI-IOT/torch2trt).(TensorRT version>=7.1)
 
-If you use this repo in NVIDIA embedded products(such as jetson xavier nx), you can follow this [install_jetson.md]( install_jetson.md).
+If you use this repo in NVIDIA embedded products(such as jetson xavier nx), you can follow this [install_jetson.md](INSTALL_jetson.md).
 
-if you want to use TensorRT in Desktop computer,you can follow this [install.md](install.md).
+if you want to use TensorRT in Desktop computer,you can follow this [install.md](INSTALL.md).
 
 
 
