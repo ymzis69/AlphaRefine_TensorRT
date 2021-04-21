@@ -23,7 +23,7 @@ from pytracking.RF_utils import bbox_clip
 from arena.LaSOT.common_path_siamrpn import *
 
 # python ./arena/LaSOT/run_RF_RF.py --tracker_name siamrpn_r50_l234_dwxcorr --dataset UAV123
-# python ./arena/LaSOT/run_RF_RF.py --tracker_name siamrpn_r50_l234_dwxcorr --dataset UAV123 --convert_trt True
+# python ./arena/LaSOT/run_RF_RF.py --tracker_name siamrpn_r50_l234_dwxcorr --dataset UAV123 --convert_trt
 parser = argparse.ArgumentParser(description='siamrpn tracking')
 parser.add_argument('--tracker_name', default=siam_model_, type=str,
                     help='siamrpn_r50_l234_dwxcorr, siamrpn_r50_l234_dwxcorr_otb')
@@ -33,7 +33,7 @@ parser.add_argument('--video', default=video_name_, type=str,
                     help='eval one special video')
 parser.add_argument('--vis', action='store_true', default=False,
                     help='whether visualzie result')
-parser.add_argument('--convert_trt', default=False,
+parser.add_argument('--convert_trt', action='store_true', default=False,
                     help='whether to convert TensorRT model')
 
 args = parser.parse_args()
