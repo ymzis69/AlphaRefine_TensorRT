@@ -16,7 +16,7 @@ Notes:
 
 ```bash
 git clone https://github.com/ymzis69/AlphaRefine_TensorRT.git
-cd AlphaRefine
+cd AlphaRefine_TensorRT
 ```
 
 
@@ -67,13 +67,13 @@ refine_path = '/home/ymz2/AlphaRefine/ltr/checkpoints/ltr/SEx_beta/SEcmnet-alex_
 Run the following command to convert the model:
 
 ```
-python ./arena/LaSOT/run_RF_RF.py --tracker_name siamrpn_r50_l234_dwxcorr --dataset UAV123 --convert_trt True
+python ./arena/LaSOT/run_RF_RF.py --tracker_name siamrpn_r50_l234_dwxcorr --dataset UAV123 --convert_trt
 ```
 
-If you want to run navie AlphaRefine, you can set the `conver_trt` parameter to False:
+If you want to run navie AlphaRefine, you can run the following command:
 
 ```
-python ./arena/LaSOT/run_RF_RF.py --tracker_name siamrpn_r50_l234_dwxcorr --dataset UAV123 --convert_trt False
+python ./arena/LaSOT/run_RF_RF.py --tracker_name siamrpn_r50_l234_dwxcorr --dataset UAV123
 ```
 
 
