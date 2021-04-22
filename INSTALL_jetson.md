@@ -55,6 +55,7 @@ sudo apt-get install libjpeg-dev zlib1g-dev
 git clone --branch  v0.6.0 https://github.com/pytorch/vision torchvision
 cd torchvision
 sudo python3 setup.py install
+cd -
 ```
 
 #### Install matplotlib, pandas, tqdm, opencv, scikit-image, visdom, tikzplotlib, gdown, and tensorboad  
@@ -138,12 +139,16 @@ import torch2trt
 
 
 
-### Docker image:
 
-if you want to use docker,you can use command: 
+
+## Optional:
+
+#### Use Docker image:
+
+if you want to use docker, you can use the following command to get the docker image:
 
 ```
-sudo docker pull registry.cn-hangzhou.aliyuncs.com/zxh98/alpharefine_jetson_trt
+sudo docker pull ymzis69/jetson_tensorrt7.1_cuda10.2_cudnn8.0_alpharefine:v1.0
 ```
 
 Note：
@@ -151,3 +156,43 @@ Note：
 1.The code and test dataset needs to be mounted under the `/home` directory;
 
 2.There is no `scikit-image` library in the environment.
+
+
+
+Firstly, create a container(You must modify the path in `arena/LaSOT/common_path.py` to make sure it run properly):
+
+```
+# docker run --gpus all -it -v /home/ymz2/AlphaRefine_TensorRT:/home/AlphaRefine_TensorRT 112f385ad1ef /bin/bash
+docker run --gpus all -it -v <you path to>/AlphaRefine_TensorRT:/home/AlphaRefine_TensorRT <image id> /bin/bash
+```
+
+
+
+You need to run these commands in the container:
+
+```
+cd /home/AlphaRefine_TensorRT
+```
+
+```
+python3 setup.py develop
+```
+
+```bash
+# Environment settings for pytracking. Saved at pytracking/evaluation/local.py
+python3 -c "from pytracking.evaluation.environment import create_default_local_file; create_default_local_file()"
+
+# Environment settings for ltr. Saved at ltr/admin/local.py
+python3 -c "from ltr.admin.environment import create_default_local_file; create_default_local_file()"
+```
+
+
+
+then you can run the following command in container:
+
+```
+python3 ./arena/LaSOT/run_RF_RF.py --tracker_name siamrpn_r50_l234_dwxcorr --dataset UAV123
+python3 ./arena/LaSOT/run_RF_RF.py --tracker_name siamrpn_r50_l234_dwxcorr --dataset UAV123 --convert_trt
+python3 ./arena/LaSOT/run_RF_RF_trt.py --tracker_name siamrpn_r50_l234_dwxcorr --dataset UAV123 --tensorrt_model 3
+```
+
