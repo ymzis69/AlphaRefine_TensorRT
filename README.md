@@ -70,7 +70,7 @@ Run the following command to convert the model:
 python ./arena/LaSOT/run_RF_RF.py --tracker_name siamrpn_r50_l234_dwxcorr --dataset UAV123 --convert_trt
 ```
 
-If you want to run navie AlphaRefine, you can run the following command:
+If you want to run naive AlphaRefine, you can run the following command:
 
 ```
 python ./arena/LaSOT/run_RF_RF.py --tracker_name siamrpn_r50_l234_dwxcorr --dataset UAV123
