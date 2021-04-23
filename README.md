@@ -180,6 +180,6 @@ The toolkit contains the implementation of the following trackers.
 
 ## Acknowledgments
 * This repo is based on [Pytracking](https://github.com/visionml/pytracking.git) which is an exellent work.
-* Thansk for [pysot](https://github.com/STVIR/pysot) and [RTMDNet](https://github.com/IlchaeJung/RT-MDNet) from which we
+* Thanks for [pysot](https://github.com/STVIR/pysot) and [RTMDNet](https://github.com/IlchaeJung/RT-MDNet) from which we
  we borrow the code as base trackers.
 
